@@ -1,61 +1,131 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Veyda - AI Solutions</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/scrollreveal/4.0.9/scrollreveal.min.js"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Courgette&display=swap" rel="stylesheet">
-    <style>
-        .logo {
-            font-family: 'Courgette', cursive;
-            font-size: 2rem;
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Veyda - AI Solutions</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/scrollreveal/4.0.9/scrollreveal.min.js"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Courgette&display=swap" rel="stylesheet">
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+
+  <style>
+    .logo {
+      font-family: 'Courgette', cursive;
+    }
+    .fade-in {
+      animation: fadeIn 2s ease-in-out;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
 </head>
-<body class="bg-gray-900 text-white">
-    
-    <!-- Header with Logo -->
-    <header class="py-4 px-6 flex justify-center">
-        <h1 class="logo text-blue-400">Veyda</h1>
-    </header>
-    
-    <!-- Hero Section -->
-    <section class="h-screen flex flex-col justify-center items-center text-center px-6 animate-fade-in">
-        <h1 class="text-4xl font-bold">Revolutionizing Business with AI</h1>
-        <p class="mt-4 text-lg">Automate workflows, enhance marketing, and grow with AI-powered solutions.</p>
-        <a href="#services" class="mt-6 px-6 py-3 bg-blue-500 rounded-full text-lg hover:bg-blue-600 transition">Explore Services</a>
-    </section>
-    
-    <!-- Services Section -->
-    <section id="services" class="py-16 px-6 text-center">
-        <h2 class="text-3xl font-semibold">Our AI Solutions</h2>
-        <div class="mt-8 grid md:grid-cols-3 gap-6">
-            <div class="p-6 bg-gray-800 rounded-lg shadow-lg reveal">
-                <h3 class="text-xl font-bold">AI Chatbots</h3>
-                <p class="mt-2">Automate customer interactions and enhance engagement.</p>
-            </div>
-            <div class="p-6 bg-gray-800 rounded-lg shadow-lg reveal">
-                <h3 class="text-xl font-bold">AI-Powered Marketing</h3>
-                <p class="mt-2">Boost conversions with data-driven AI strategies.</p>
-            </div>
-            <div class="p-6 bg-gray-800 rounded-lg shadow-lg reveal">
-                <h3 class="text-xl font-bold">Automation & AI Tools</h3>
-                <p class="mt-2">Save time and optimize processes with AI automation.</p>
-            </div>
-        </div>
-    </section>
-    
-    <!-- CTA Section -->
-    <section class="py-16 px-6 text-center bg-gray-800">
-        <h2 class="text-3xl font-semibold">Ready to Integrate AI?</h2>
-        <p class="mt-4">Let’s discuss how AI can transform your business.</p>
-        <a href="mailto:contact@veyda.com" class="mt-6 px-6 py-3 bg-blue-500 rounded-full text-lg hover:bg-blue-600 transition">Book a Free Consultation</a>
-    </section>
-    
-    <script>
-        ScrollReveal().reveal('.reveal', { delay: 300, duration: 1000, distance: '50px', origin: 'bottom' });
-    </script>
+<body class="bg-gray-900 text-white scroll-smooth">
+
+  <!-- Navbar -->
+  <nav class="bg-gray-950 px-6 py-4 flex items-center justify-between fixed top-0 left-0 w-full z-50 shadow-md">
+    <div class="logo text-blue-400 text-2xl">Veyda</div>
+    <div class="md:hidden">
+      <button id="menu-toggle" class="text-white">
+        <i data-lucide="menu" class="w-6 h-6"></i>
+      </button>
+    </div>
+    <ul class="hidden md:flex gap-8 text-white text-lg">
+      <li><a href="#services" class="hover:text-blue-400">Services</a></li>
+      <li><a href="#contact" class="hover:text-blue-400">Contact</a></li>
+      <li><a href="#about" class="hover:text-blue-400">About</a></li>
+    </ul>
+  </nav>
+
+  <!-- Side Menu (Mobile) -->
+  <div id="side-menu" class="fixed top-0 right-0 w-64 h-full bg-gray-800 shadow-lg transform translate-x-full transition-transform duration-300 z-50">
+    <div class="flex justify-between items-center p-4 border-b border-gray-700">
+      <h2 class="text-xl font-bold">Menu</h2>
+      <button id="close-menu"><i data-lucide="x" class="w-6 h-6 text-white"></i></button>
+    </div>
+    <ul class="p-6 space-y-4 text-lg">
+      <li><a href="#services" class="block hover:text-blue-400">Services</a></li>
+      <li><a href="#contact" class="block hover:text-blue-400">Contact</a></li>
+      <li><a href="#about" class="block hover:text-blue-400">About</a></li>
+    </ul>
+  </div>
+
+  <!-- Hero Section -->
+  <section class="h-screen flex flex-col justify-center items-center text-center px-6 fade-in pt-24">
+    <h1 class="text-5xl font-extrabold leading-tight">Revolutionizing Business with AI</h1>
+    <p class="mt-4 text-xl max-w-xl">Automate workflows, enhance marketing, and grow with AI-powered solutions.</p>
+    <a href="#services" class="mt-6 px-6 py-3 bg-blue-500 rounded-full text-lg hover:bg-blue-600 transition">Explore Services</a>
+  </section>
+
+  <!-- Services Section -->
+  <section id="services" class="py-20 px-6 text-center bg-gray-900">
+    <h2 class="text-4xl font-bold mb-10">Our AI Solutions</h2>
+    <div class="grid md:grid-cols-3 gap-8">
+      <div class="p-6 bg-gray-800 rounded-lg shadow-lg reveal">
+        <i data-lucide="bot" class="w-10 h-10 text-blue-400 mx-auto mb-4"></i>
+        <h3 class="text-xl font-bold">AI Chatbots</h3>
+        <p class="mt-2">Automate customer interactions and enhance engagement.</p>
+      </div>
+      <div class="p-6 bg-gray-800 rounded-lg shadow-lg reveal">
+        <i data-lucide="trending-up" class="w-10 h-10 text-blue-400 mx-auto mb-4"></i>
+        <h3 class="text-xl font-bold">AI Marketing</h3>
+        <p class="mt-2">Boost conversions with data-driven AI strategies.</p>
+      </div>
+      <div class="p-6 bg-gray-800 rounded-lg shadow-lg reveal">
+        <i data-lucide="zap" class="w-10 h-10 text-blue-400 mx-auto mb-4"></i>
+        <h3 class="text-xl font-bold">Automation Tools</h3>
+        <p class="mt-2">Save time and optimize processes with AI automation.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section id="contact" class="py-20 px-6 text-center bg-gray-800">
+    <h2 class="text-3xl font-semibold">Ready to Integrate AI?</h2>
+    <p class="mt-4 text-lg">Let’s discuss how AI can transform your business.</p>
+    <a href="mailto:contact@veyda.com" class="mt-6 inline-block px-6 py-3 bg-blue-500 rounded-full text-lg hover:bg-blue-600 transition">Book a Free Consultation</a>
+  </section>
+
+  <!-- About Section -->
+  <section id="about" class="py-20 px-6 bg-gray-900 text-center">
+    <h2 class="text-3xl font-semibold">About Veyda</h2>
+    <p class="mt-4 max-w-2xl mx-auto text-lg">Veyda is a future-focused AI solutions brand helping businesses scale using advanced automation, machine learning, and data analysis tools. We’re on a mission to make AI simple, impactful, and accessible.</p>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-gray-950 text-center py-6 text-sm text-gray-400 border-t border-gray-700">
+    <div class="flex justify-center space-x-4 mb-2">
+      <a href="#" aria-label="Twitter"><i data-lucide="twitter" class="w-5 h-5 hover:text-blue-400"></i></a>
+      <a href="#" aria-label="LinkedIn"><i data-lucide="linkedin" class="w-5 h-5 hover:text-blue-400"></i></a>
+      <a href="#" aria-label="Instagram"><i data-lucide="instagram" class="w-5 h-5 hover:text-blue-400"></i></a>
+    </div>
+    <p>&copy; 2025 Veyda. All rights reserved.</p>
+  </footer>
+
+  <script>
+    ScrollReveal().reveal('.reveal', {
+      delay: 300,
+      duration: 1000,
+      distance: '50px',
+      origin: 'bottom'
+    });
+
+    lucide.createIcons();
+
+    // Toggle mobile menu
+    const menuBtn = document.getElementById('menu-toggle');
+    const closeBtn = document.getElementById('close-menu');
+    const sideMenu = document.getElementById('side-menu');
+
+    menuBtn.addEventListener('click', () => {
+      sideMenu.classList.remove('translate-x-full');
+    });
+
+    closeBtn.addEventListener('click', () => {
+      sideMenu.classList.add('translate-x-full');
+    });
+  </script>
 </body>
 </html>
