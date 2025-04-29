@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Veyda - AI Solutions</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/scrollreveal/4.0.9/scrollreveal.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Courgette&display=swap" rel="stylesheet">
+    <style>
+        .logo {
+            font-family: 'Courgette', cursive;
+            font-size: 2rem;
+        }
+    </style>
+</head>
+<body class="bg-gray-900 text-white">
+    
+    <!-- Header with Logo -->
+    <header class="py-4 px-6 flex justify-center">
+        <h1 class="logo text-blue-400">Veyda</h1>
+    </header>
+    
+    <!-- Hero Section -->
+    <section class="h-screen flex flex-col justify-center items-center text-center px-6 animate-fade-in">
+        <h1 class="text-4xl font-bold">Revolutionizing Business with AI</h1>
+        <p class="mt-4 text-lg">Automate workflows, enhance marketing, and grow with AI-powered solutions.</p>
+        <a href="#services" class="mt-6 px-6 py-3 bg-blue-500 rounded-full text-lg hover:bg-blue-600 transition">Explore Services</a>
+    </section>
+    
+    <!-- Services Section -->
+    <section id="services" class="py-16 px-6 text-center">
+        <h2 class="text-3xl font-semibold">Our AI Solutions</h2>
+        <div class="mt-8 grid md:grid-cols-3 gap-6">
+            <div class="p-6 bg-gray-800 rounded-lg shadow-lg reveal">
+                <h3 class="text-xl font-bold">AI Chatbots</h3>
+                <p class="mt-2">Automate customer interactions and enhance engagement.</p>
+            </div>
+            <div class="p-6 bg-gray-800 rounded-lg shadow-lg reveal">
+                <h3 class="text-xl font-bold">AI-Powered Marketing</h3>
+                <p class="mt-2">Boost conversions with data-driven AI strategies.</p>
+            </div>
+            <div class="p-6 bg-gray-800 rounded-lg shadow-lg reveal">
+                <h3 class="text-xl font-bold">Automation & AI Tools</h3>
+                <p class="mt-2">Save time and optimize processes with AI automation.</p>
+            </div>
+        </div>
+    </section>
+    
+    <!-- CTA Section -->
+    <section class="py-16 px-6 text-center bg-gray-800">
+        <h2 class="text-3xl font-semibold">Ready to Integrate AI?</h2>
+        <p class="mt-4">Let’s discuss how AI can transform your business.</p>
+        <a href="mailto:contact@veyda.com" class="mt-6 px-6 py-3 bg-blue-500 rounded-full text-lg hover:bg-blue-600 transition">Book a Free Consultation</a>
+    </section>
+    
+    <script>
+        ScrollReveal().reveal('.reveal', { delay: 300, duration: 1000, distance: '50px', origin: 'bottom' });
+    </script>
+</body>
+</html>
